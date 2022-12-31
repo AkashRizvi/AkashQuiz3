@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3: Sum Of Odd</title>
+</head>
+
+<body>
+
+    <h1>Section - III</h1>
+
+    <h3>Q3: Write a program that takes a number of greater than 5 digits from input field and
+        shows sum of all odd numbers. For example, if the input is 196783, the sum would
+        be 1 + 9 + 7 + 3 = 20.</h3>
+
+    <script>
+
+        function reverse(n) {
+            let rev = 0;
+            while (n != 0) {
+                rev = (rev * 10) + (n % 10);
+                n = Math.floor(n / 10);
+            }
+            // console.log(`rev = ${rev}`)
+            return rev;
+        }
+        function getSum(n) {
+            document.write(`<b>actual number = ${n} </b><br>`)
+            n = reverse(n);
+            let sumOdd = 0, c = 1;
+
+            while (n != 0) {
+
+                if (c % 2 == 1)
+                    sumOdd += n % 10;
+                    n = Math.floor(n / 10);
+                c++;
+            }
+
+            document.write("Sum of odd = " + sumOdd);
+            document.write("<br>");
+        }
+        let n = 345678;
+        getSum(n);
+    </script>
+</body>
+
+</html>
